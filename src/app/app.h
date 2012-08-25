@@ -4,27 +4,30 @@
 #define GLEW_BUILD
 
 #include <string>
+#include <vector>
 
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+
+#include "game/controller.h"
 
 namespace app
 {
     class app
     {
-    private:
-        bool _fullscreen;
-        sf::VideoMode _video;
+        private:
+            bool _fullscreen;
+            sf::VideoMode _video;
 
-    public:
-        sf::RenderWindow window;
+        public:
+            sf::RenderWindow window;
 
-        app();
+            app();
 
-        void create();
-        void setFull(bool fullscreen_);
-        void toggleFull();
-        virtual void input();
+            void create();
+            void setFull(bool fullscreen_);
+            void toggleFull();
+            virtual void input();
     };
 }
 
