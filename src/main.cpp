@@ -11,9 +11,11 @@ int main()
     app::app game;
     game.create();
 
+    game::controller control;
+
     while (game.window.isOpen())
     {
-        game.input();
+        game.input(control);
         game.window.display();
     }
 }

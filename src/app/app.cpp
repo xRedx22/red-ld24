@@ -26,12 +26,14 @@ namespace app
         setFull(!_fullscreen);
     }
 
-    void app::input()
+    void app::input(game::controller& controller_)
     {
         sf::Event event_;
 
         while (window.pollEvent(event_))
         {
+            controller_.input(event_);
+
             switch (event_.type)
             {
                 case sf::Event::Closed:

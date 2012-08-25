@@ -27,7 +27,7 @@ namespace app
             void create();
             void setFull(bool fullscreen_);
             void toggleFull();
-            virtual void input();
+            void input(game::controller& controller_);
     };
 }
 
