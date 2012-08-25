@@ -41,24 +41,30 @@
 			<Add option="-Wextra" />
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
+			<Add option="-DSFML_STATIC" />
+			<Add directory="include" />
+			<Add directory="src" />
 		</Compiler>
 		<Linker>
+			<Add library="libsfml-network-s" />
 			<Add library="libsfml-audio-s" />
 			<Add library="libsfml-graphics-s" />
-			<Add library="libsfml-network-s" />
 			<Add library="libsfml-window-s" />
 			<Add library="libsfml-system-s" />
 			<Add library="GL" />
 			<Add library="GLU" />
 			<Add library="libGLEW" />
-			<Add library="libjpeg" />
 			<Add library="Xrandr" />
+			<Add library="libjpeg" />
 		</Linker>
-		<ExtraCommands>
-			<Add after="ln -s ../../../rc $(TARGET_OUTPUT_DIR)/rc" />
-		</ExtraCommands>
 		<Unit filename="src/app/app.cpp" />
 		<Unit filename="src/app/app.h" />
+		<Unit filename="src/game/character.cpp" />
+		<Unit filename="src/game/character.h" />
+		<Unit filename="src/game/controller.cpp" />
+		<Unit filename="src/game/controller.h" />
+		<Unit filename="src/game/entity.cpp" />
+		<Unit filename="src/game/entity.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />

@@ -21,6 +21,7 @@ namespace game
             gameInput(inputState& state_) : _state(state_) {};
 
             virtual void input(sf::Event event_) = 0;
+            virtual void tick() = 0;
     };
 
     class controller

@@ -4,7 +4,7 @@ namespace game
 {
     controller::controller()
     {
-        for (unsigned int i = 0; i < _inputs.size(); i ++)
+        for (unsigned int i = 0; i < sf::Keyboard::KeyCount; i ++)
         {
             state.down[i] = false;
         }
@@ -16,6 +16,9 @@ namespace game
         {
             _inputs[i]->input(event_);
         }
+
+        if (event_.type == sf::Event::KeyPressed || event_.type == sf::Event::KeyReleased)
+            state.down[event_.key.code] = (event_.type == sf::Event::KeyPressed) ? true : false;
     }
 
     void controller::track(gameInput& input_)

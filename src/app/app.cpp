@@ -13,6 +13,7 @@ namespace app
         sf::Uint32 style_ = sf::Style::Titlebar | (_fullscreen ? sf::Style::Fullscreen : sf::Style::None);
 
         window.create(_video, std::string("ld24"), style_);
+        window.setVerticalSyncEnabled(true);
     }
 
     void app::setFull(bool fullscreen_)
