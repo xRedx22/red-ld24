@@ -17,13 +17,13 @@ int main()
     game::controller control;
 
     sf::Texture test;
-    if (!test.loadFromFile("rc/test_sheet.png"))
+    if (!test.loadFromFile("rc/dinoTestSheet.png"))
     {
         cout << "Error loading test image\n";
         return 1;
     }
 
-    graphics::animation sprite(test, 5, 6, 16);
+    graphics::animation sprite(test, 5, 1, 100);
 
     game::character player(sprite, game, control);
     world.add(player);
