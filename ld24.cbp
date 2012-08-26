@@ -65,6 +65,8 @@
 		<Unit filename="src/game/controller.h" />
 		<Unit filename="src/game/entity.cpp" />
 		<Unit filename="src/game/entity.h" />
+		<Unit filename="src/graphics/sprite.cpp" />
+		<Unit filename="src/graphics/sprite.h" />
 		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
