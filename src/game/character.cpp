@@ -25,8 +25,14 @@ namespace game
     void character::tick()
     {
         _input.tick();
+        _image.tick();
+
         x += _xvel;
         y += _yvel;
+
+        _image.setPosition(x, y);
+
+        _app.window.draw(_image);
     }
 
     void character::destroy()

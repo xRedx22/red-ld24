@@ -18,6 +18,7 @@ namespace app
         private:
             bool _fullscreen;
             sf::VideoMode _video;
+            sf::VideoMode _wvideo;
 
         public:
             sf::RenderWindow window;

@@ -1,14 +1,15 @@
 # depslib dependency file v1.0
-1345926358 source:/home/xredx/Projects/ld48/ld24/src/main.cpp
+1345952948 source:/home/xredx/Projects/ld48/ld24/src/main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	"app/app.h"
 	"game/character.h"
+	"graphics/sprite.h"
 
-1345926748 source:/home/xredx/Projects/ld48/ld24/src/app/app.cpp
+1345953640 source:/home/xredx/Projects/ld48/ld24/src/app/app.cpp
 	"app.h"
 
-1345919697 /home/xredx/Projects/ld48/ld24/src/app/app.h
+1345953509 /home/xredx/Projects/ld48/ld24/src/app/app.h
 	<string>
 	<vector>
 	<SFML/Window.hpp>
@@ -690,17 +691,27 @@
 1345927670 source:/home/xredx/Projects/ld48/ld24/src/game/controller.cpp
 	"controller.h"
 
-1345927631 source:/home/xredx/Projects/ld48/ld24/src/game/character.cpp
+1345952610 source:/home/xredx/Projects/ld48/ld24/src/game/character.cpp
 	"character.h"
 
-1345927554 /home/xredx/Projects/ld48/ld24/src/game/character.h
+1345953739 /home/xredx/Projects/ld48/ld24/src/game/character.h
 	<iostream>
 	"entity.h"
 	"controller.h"
+	"app/app.h"
+	"graphics/sprite.h"
 
 1345924814 source:/home/xredx/Projects/ld48/ld24/src/game/entity.cpp
 	"entity.h"
 
 1345924808 /home/xredx/Projects/ld48/ld24/src/game/entity.h
 	<vector>
+
+1345952346 /home/xredx/Projects/ld48/ld24/src/graphics/sprite.h
+	<vector>
+	<SFML/Graphics.hpp>
+	<SFML/System.hpp>
+
+1345953172 source:/home/xredx/Projects/ld48/ld24/src/graphics/sprite.cpp
+	"sprite.h"
 

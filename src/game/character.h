@@ -6,6 +6,9 @@
 #include "entity.h"
 #include "controller.h"
 
+#include "app/app.h"
+#include "graphics/sprite.h"
+
 namespace game
 {
     class charInput: public gameInput
@@ -25,13 +28,17 @@ namespace game
     {
         private:
             float _xvel, _yvel;
+
+            graphics::sprite _image;
             charInput _input;
+
+            app::app& _app;
             controller& _controller;
 
         public:
             float x, y;
 
-            character(controller& controller_) : _input(controller_.state, _xvel, _yvel), _controller(controller_) {};
+            character(graphics::animation& image_, app::app& app_, controller& controller_) : _image(image_), _input(controller_.state, _xvel, _yvel), _app(app_), _controller(controller_) {};
 
             void tick();
             void destroy();

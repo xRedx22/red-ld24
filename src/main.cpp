@@ -4,6 +4,7 @@
 
 #include "app/app.h"
 #include "game/character.h"
+#include "graphics/sprite.h"
 
 using namespace std;
 
@@ -15,27 +16,24 @@ int main()
     game::world world;
     game::controller control;
 
-    game::character player(control);
-    world.add(player);
-
     sf::Texture test;
-    if (!test.loadFromFile("rc/test_player.png"))
+    if (!test.loadFromFile("rc/test_sheet.png"))
     {
         cout << "Error loading test image\n";
         return 1;
     }
 
-    sf::Sprite sprite(test);
+    graphics::animation sprite(test, 5, 6, 16);
+
+    game::character player(sprite, game, control);
+    world.add(player);
 
     while (game.window.isOpen())
     {
-        game.input(control);
-        world.tick();
-
         game.window.clear();
 
-        sprite.setPosition(player.x, player.y);
-        game.window.draw(sprite);
+        game.input(control);
+        world.tick();
 
         game.window.display();
     }

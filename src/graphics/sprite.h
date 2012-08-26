@@ -17,7 +17,7 @@ namespace graphics
             std::vector<sf::IntRect> _frames;
 
         public:
-            animation(const sf::Texture& image_, unsigned int xwidth_, unsigned int ywidth_, unsigned int xcount_, unsigned int ycount_, float time_);
+            animation(const sf::Texture& image_, unsigned int xcount_, unsigned int ycount_, float time_);
 
             const unsigned int& frames() {return _count;};
             const float& duration() {return _time;};

@@ -2,20 +2,22 @@
 
 namespace graphics
 {
-    animation::animation(const sf::Texture& image_, unsigned int xwidth_, unsigned int ywidth_, unsigned int xcount_, unsigned int ycount_, float time_) : _image(image_)
+    animation::animation(const sf::Texture& image_, unsigned int xcount_, unsigned int ycount_, float time_) : _image(image_)
     {
         _count = xcount_ * ycount_;
         _time = time_;
 
+        sf::Vector2u size_ = image_.getSize();
+
         unsigned int xinc_, yinc_;
-        xinc_ = xwidth_ / xcount_;
-        yinc_ = ywidth_ / ycount_;
+        xinc_ = size_.x / xcount_;
+        yinc_ = size_.y / ycount_;
 
         for (unsigned int y_ = 0; y_ < ycount_; y_ ++)
         {
             for (unsigned int x_ = 0; x_ < xcount_; x_ ++)
             {
-                _frames.push_back(sf::IntRect(x_ * xinc_, y_ * yinc_, (x_ + 1) * xinc_, (y_ + 1) * yinc_));
+                _frames.push_back(sf::IntRect(x_ * xinc_, y_ * yinc_, xinc_, yinc_));
             }
         }
     }
@@ -31,7 +33,7 @@ namespace graphics
 
     void sprite::setFrame(unsigned int frame_)
     {
-        if (frame_ > _image->frames())
+        if (frame_ >= _image->frames())
             frame_ = 0;
 
         _frame = frame_;

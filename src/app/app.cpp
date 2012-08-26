@@ -6,13 +6,15 @@ namespace app
     {
         _fullscreen = true;
         _video = sf::VideoMode::getDesktopMode();
+        _wvideo = sf::VideoMode(800, 600);
     }
 
     void app::create()
     {
-        sf::Uint32 style_ = sf::Style::Titlebar | (_fullscreen ? sf::Style::Fullscreen : sf::Style::None);
+        sf::Uint32 style_ = sf::Style::Titlebar | sf::Style::Close | (_fullscreen ? sf::Style::Fullscreen : sf::Style::None);
+        sf::VideoMode video_ = _fullscreen ? _video : _wvideo;
 
-        window.create(_video, std::string("ld24"), style_);
+        window.create(video_, std::string("ld24"), style_);
         window.setVerticalSyncEnabled(true);
     }
 
@@ -41,7 +43,7 @@ namespace app
                     window.close();
                     break;
 
-                case sf::Event::KeyPressed:
+                case sf::Event::KeyReleased:
                     switch (event_.key.code)
                     {
                         case sf::Keyboard::Escape:
